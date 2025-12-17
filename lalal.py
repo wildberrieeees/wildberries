@@ -4,7 +4,6 @@ import pandas as pd
 import plotly.express as px
 from pandas.core.frame import DataFrame
 
-
 # Функция для суммирования с фильтром по датам
 def get_a_value_of_column(excel: DataFrame, column_name: str) -> int:
     if not agree:
@@ -32,6 +31,7 @@ if not agree:
     last_time = st.date_input("По ")
 
 # Загрузка данных
+st.file_uploader("Выберите файл", type=["xlsx"])
 df = pd.read_excel("0.xlsx")
 if not pd.api.types.is_datetime64_any_dtype(df["Дата продажи"]):
     df["Дата продажи"] = pd.to_datetime(df["Дата продажи"])
