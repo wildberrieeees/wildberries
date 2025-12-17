@@ -30,7 +30,6 @@ if not agree:
     one_time = st.date_input("С ")
     last_time = st.date_input("По ")
 
-# Загрузка данных
 try:
     df = pd.read_excel(st.file_uploader("Выберите файл", type=["xlsx"]))
 except Exception as e:
