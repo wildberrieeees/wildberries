@@ -98,8 +98,7 @@ else:
             st.plotly_chart(fig_fines, use_container_width=True)
 
     # Логистика и комиссия на товар
-        st.subheader("🚚 Логистика и комиссия на товар")
-
+    st.subheader("🚚 Логистика и комиссия на товар")
     # Логистика на товар
     if "Услуги по доставке товара покупателю" in cols and "Количество доставок" in cols:
         df_filtered["Логистика на товар"] = df_filtered["Услуги по доставке товара покупателю"] / df_filtered[
