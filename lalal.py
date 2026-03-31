@@ -4,6 +4,11 @@ import pandas as pd
 import plotly.express as px
 from pandas.core.frame import DataFrame
 
+# файл для теста
+
+with open("test.xlsx", "rb") as file:
+    file_contents = file.read()
+    
 # Функция для суммирования с фильтром по датам
 def get_a_value_of_column(excel: DataFrame, column_name: str) -> int:
     if not agree:
@@ -23,7 +28,13 @@ one_time = 0
 last_time = 0
 
 st.title("📊 Финансовый отчет Wildberries")
-
+with st.expander("Скачайте Тестовый файл для загрузки"):
+    st.download_button(
+        label="Скачать файл Excel",
+        data=file_contents,
+        file_name="тестовый_файл.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
 agree = st.checkbox("Выбрать ВСЕ даты")
 if not agree:
     st.subheader("Выберите период")
